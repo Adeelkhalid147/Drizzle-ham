@@ -6,7 +6,7 @@ const getData=async ()=>{
     try{
     const res=await fetch("http:/127.0.0.1:3000/api/todo",{
         method:"GET",
-        cache:"no-store",
+        cache:"no-store", 
         headers:{
             "Content-Type":"application/json"
         }
