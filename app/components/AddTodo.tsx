@@ -17,11 +17,11 @@ const handleSubmit = async () => {
                 task:task.task
             })
         })
-        console.log(res.ok)
+        // console.log(res.ok)
         refresh()
     }
     } catch (error) {
-        console.log("error")
+        // console.log("error")
         
     }
 }
