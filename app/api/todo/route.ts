@@ -6,6 +6,7 @@ import { db, todoTable } from "../../lib/drizzle";
 export async function GET(request: NextRequest) {
 try{
       await sql`CREATE TABLE IF NOT EXISTS Todos(id serial, Task varchar(255))`;
+    //   data niklne k liye db.seclect().from jo hm ne drizzle.ts mai variable nmya h wo likhna h
       const res = await db.select().from(todoTable);
       console.log(res);
       return NextResponse.json({ data: res });
@@ -22,7 +23,7 @@ export async function POST(request:NextRequest){
            const res=await db.insert(todoTable).values({
             task:req.task,
            }).returning();
-           console.log(res)
+          //  console.log(res)
 
            return NextResponse.json({message:"Data added successfully",data:res})
         }else{
